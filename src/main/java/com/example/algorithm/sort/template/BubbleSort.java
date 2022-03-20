@@ -1,4 +1,4 @@
-package com.example.algorithm.sort.common;
+package com.example.algorithm.sort.template;
 
 import java.util.Arrays;
 
