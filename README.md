@@ -29,17 +29,19 @@
   * 桶排序
   * 基数排序
 
-  
+  **比较**
 
-  相关题目
+  ![比较](https://images2018.cnblogs.com/blog/849589/201804/849589-20180402133438219-1946132192.png)
 
-  [最小K个数](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)
+  排序相关题目
 
-  [最大K个数](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
+  * [最小K个数](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)
 
-  [排序链表](https://leetcode-cn.com/problems/sort-list/)
+  * [最大K个数](https://leetcode-cn.com/problems/kth-largest-element-in-an-array/)
 
-  
+  * [排序链表](https://leetcode-cn.com/problems/sort-list/)
+
+    
 
   
 
