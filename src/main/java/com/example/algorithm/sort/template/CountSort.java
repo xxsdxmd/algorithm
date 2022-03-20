@@ -19,18 +19,28 @@ public class CountSort {
      * @param arr
      */
     private static void countSort(int[] arr) {
+        // 1,5,4,2,3,1
         int n = arr.length;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for (int value : arr) {
+            min = Math.min(value, min);
+            max = Math.max(max, value);
+        }
         int[] output = new int[n];
-        int[] count = new int[256];
-        for (int value : arr) {count[value]++;}
-        for (int i = 1; i <= 255; i++) {
+        int[] count = new int[(max - min + 1) + 1];
+        for (int value : arr) {
+            count[value - min + 1]++;
+        }
+        for (int i = 1; i < count.length; i++) {
             count[i] += count[i - 1];
         }
-        // count 0 1 3 4 5 6   arr 1 5 4 2 3 1
-        for (int i = n - 1; i >= 0; i--) {
-            output[count[arr[i] - 1]] = arr[i];
-            count[arr[i]]--;
+
+        for (int value : arr) {
+            output[count[value - min]] = value;
+            count[value - min]++;
         }
+
         System.arraycopy(output, 0, arr, 0, n);
     }
 }
