@@ -29,10 +29,6 @@
   * 桶排序
   * 基数排序
 
-  **比较**
-
-  ![比较](https://images2018.cnblogs.com/blog/849589/201804/849589-20180402133438219-1946132192.png)
-
   排序相关题目
 
   * [最小K个数](https://leetcode-cn.com/problems/zui-xiao-de-kge-shu-lcof/)
