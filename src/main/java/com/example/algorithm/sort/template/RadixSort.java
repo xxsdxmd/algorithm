@@ -40,9 +40,9 @@ public class RadixSort {
     public static void bucketSort(int[] arr, int digit) {
         int base = (int) Math.pow(10, digit);
         // init buckets
-        ArrayList<ArrayList<Integer>> buckets = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> buckets = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            buckets.add(new ArrayList<Integer>());
+            buckets.add(new ArrayList<>());
         }
         // sort
         for (int i : arr) {
