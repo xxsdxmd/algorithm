@@ -84,7 +84,68 @@ public boolean canAttendMeetings(int[][] intervals) {
 * [合并区间](https://leetcode-cn.com/problems/merge-intervals/)
 * [数飞机](https://www.lintcode.com/problem/391/)
 
+#### 2.2.3 BFS
 
+模板: [从上到下打印二叉树](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/)
 
+题目描述
 
+> 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    List<ArrayList<Integer>> lists = new ArrayList<>();
+    int cnt = 0;
+    public int[] levelOrder(TreeNode root) {
+        if (root == null) return new int[]{};
+        bfs(root);   
+        int[] res = new int[cnt];
+        int index = 0;
+        for (int i = 0; i < lists.size(); i++) {
+            for (int j = 0; j < lists.get(i).size(); j++) {
+                res[index++] = lists.get(i).get(j);
+            }
+        } 
+        return res;
+    }
+
+    private void bfs(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
+            ArrayList<Integer> list = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+               TreeNode node = queue.poll();
+               list.add(node.val);
+               cnt++;
+               if (node.left != null) {
+                   queue.add(node.left);
+               }
+               if (node.right != null) {
+                   queue.add(node.right);
+               }
+            }
+            lists.add(list);
+        }
+    }
+}
+```
+
+* [二叉树的深度](https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof/)
+* [机器人的运动范围](https://leetcode-cn.com/problems/ji-qi-ren-de-yun-dong-fan-wei-lcof/)
+* [二叉树的镜像](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/)
+* [从上到下打印二叉树 III](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/)
+* [序列化二叉树](https://leetcode-cn.com/problems/xu-lie-hua-er-cha-shu-lcof/)
+* [单词接龙](https://leetcode-cn.com/problems/word-ladder/)
+* [课程表](https://leetcode-cn.com/problems/course-schedule/)
 
