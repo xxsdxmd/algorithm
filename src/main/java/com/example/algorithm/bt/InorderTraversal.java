@@ -12,7 +12,10 @@ public class InorderTraversal {
 
 
     public static void main(String[] args) {
-
+        List<Integer> traversal = inorderTraversal(TreeNodeFactory.createTreeNode());
+        List<Integer> traversalV2 = inorderTraversalV2(TreeNodeFactory.createTreeNode());
+        System.out.println(traversal);
+        System.out.println(traversalV2);
     }
 
     /**
@@ -21,7 +24,7 @@ public class InorderTraversal {
      * @param root
      * @return
      */
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public static List<Integer> inorderTraversal(TreeNode root) {
 
         List<Integer> res = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
@@ -41,6 +44,30 @@ public class InorderTraversal {
             }
         }
         return res;
+    }
+
+    /**
+     * 递归
+     * left root right
+     * @param root
+     * @return
+     */
+    public static List<Integer> inorderTraversalV2(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        inOrder(res, root);
+        return res;
+    }
+
+    /**
+     * 递归
+     * @param res
+     * @param root
+     */
+    private static void inOrder(List<Integer> res, TreeNode root) {
+        if (root == null) return;
+        inOrder(res, root.left);
+        res.add(root.val);
+        inOrder(res, root.right);
     }
 
 }
