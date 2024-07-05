@@ -56,7 +56,7 @@ public class InvertTree {
      * @return
      */
     private TreeNode invertQueue(TreeNode root) {
-        if (root == null) return root;
+        if (root == null) return null;
         Queue<TreeNode> queue = new LinkedList<>();
         queue.add(root);
 
