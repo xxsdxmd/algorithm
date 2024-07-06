@@ -12,11 +12,11 @@ public class TreeNodeFactory {
      * @return
      */
     public static TreeNode createTreeNode() {
-        TreeNode root = new TreeNode(1);
-        TreeNode node1 = new TreeNode(2);
+        TreeNode root = new TreeNode(2);
+        TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(3);
-        root.right = node1;
-        node1.left = node2;
+        root.left = node1;
+        root.right = node2;
         return root;
     }
 }
